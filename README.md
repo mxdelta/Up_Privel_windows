@@ -30,4 +30,4 @@ schtasks /create /sc minute /mo 5 /tn "Opera scheduled Autoupdate 1594994248" /t
 
 chcp 65001
 
-psexec -i \\adress -u user cmd
+psexec -i \\\adress -u user cmd
