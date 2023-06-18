@@ -69,6 +69,8 @@ Get-ADUser -identity administrator -properties memberof
 net user administrator /domain в какие группы входит пользователь
 net group "domain admins" кто входит в группы
 
+Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры в домене
+net group "domain computer"
 
 
 
