@@ -63,6 +63,7 @@ chcp 65001
 psexec -i \\\adress -u user cmd
 ***************************************************************************************************************************************************
 Cбор информации в домене 
+net user /domain пользователи домена
 Get-ADUser -identity administrator -properties *
 Get-ADUser -identity administrator -properties memberof
 
