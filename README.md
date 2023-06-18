@@ -2,6 +2,8 @@
 Подключение по РДП
 rdesktop -u Administrator -p Admin123 -d ROOT.DC 192.168.50.200  
 для машины в рабочей группе xfreerdp /u:Alexs /p:2013 /v:192.168.50.232
+xfreerdp /v:192.168.50.200 /d:root.dc /u:administrator /p:Admin123
+
 
 
 
