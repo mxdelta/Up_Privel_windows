@@ -61,9 +61,14 @@ schtasks /create /sc minute /mo 5 /tn "Opera scheduled Autoupdate 1594994248" /t
 chcp 65001
 
 psexec -i \\\adress -u user cmd
-
+***************************************************************************************************************************************************
 Cбор информации в домене 
 Get-ADUser -identity administrator -properties *
+Get-ADUser -identity administrator -properties memberof
+
+net user administrator /domain в какие группы входит пользователь
+net group "domain admins" кто входит в группы
+
 
 
 
