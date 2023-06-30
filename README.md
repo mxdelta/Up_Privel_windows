@@ -73,6 +73,8 @@ chcp 65001
 psexec -i \\\adress -u user cmd
 ***************************************************************************************************************************************************
 Cбор информации в домене 
+
+
 net user /domain пользователи домена
 Get-ADUser -identity administrator -properties *
 Get-ADUser -identity administrator -properties memberof
@@ -83,5 +85,8 @@ net group "domain admins" кто входит в группы
 Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры в домене
 net group "domain computer"
 
-
+снаружи домена 
+rpcclient 10.10.38.153 -U nik - нужен пароль - может перечислять пользователей и группы в домене 
+enumdomusers - перчисляет пользователей 
+enumdomgroup - перечисляет группы
 
