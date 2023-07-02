@@ -104,3 +104,6 @@ https://github.com/HarmJ0y/PowerUp
 
 https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
 https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
+  для которого import-module ./powerup.ps1 и затем Invoke-AllChecks
+
+  
