@@ -96,3 +96,11 @@ python3 GetNPUsers.py enterprise.thm/ -dc-ip 10.10.38.153 -usersfile /home/max/u
 Глянуть SPN 
 
 python3 GetUserSPNs.py -dc-ip 10.10.154.84 lab.enterprise.thm/nik:ToastyBoi! -request
+
+Скрипты векторов повышения привелегий
+
+
+https://github.com/HarmJ0y/PowerUp
+
+https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
+https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
