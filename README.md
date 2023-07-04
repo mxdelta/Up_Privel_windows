@@ -100,8 +100,12 @@ python3 GetNPUsers.py enterprise.thm/ -dc-ip 10.10.38.153 -usersfile /home/max/u
 
 python3 GetUserSPNs.py -dc-ip 10.10.154.84 lab.enterprise.thm/nik:ToastyBoi! -request
 
-Скрипты векторов повышения привелегий
+   Скрипты векторов повышения привелегий
 
+Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы, включая конфигурацию операционной системы, информацию о безопасности, идентификатор продукта и свойства оборудования (например, ОЗУ, место на диске и сетевые карты).
+Systeminfo перенаправил в текстовик, после этого я загрузил на Kali этот файл, и сейчас будем смотреть в него
+
+Но перед этим нужно скачать exploit_suggester, например такой: GitHub - AonCyberLabs/Windows-Exploit-Suggester: This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target. It also notifies the user if there are public exploits and Metasploit modules available for the missing bulletins.
 
 https://github.com/HarmJ0y/PowerUp
 
