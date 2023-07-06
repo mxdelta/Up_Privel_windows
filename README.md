@@ -21,6 +21,12 @@ copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYS
 
 
 
+
+Поиск секретов
+
+
+cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config
+
 Как извлечь хеш пароля пользователя NTLM из файлов реестра
 
 
