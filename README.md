@@ -23,6 +23,11 @@ cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config
 
 
 МИМИКАТЗ
+мимикатз в метасплойт 
+
+kiwi_cmd lsadump::sam
+
+
 
 https://github.com/gentilkiwi/mimikatz/releases 
 Как извлечь хеш пароля пользователя NTLM из файлов реестра
