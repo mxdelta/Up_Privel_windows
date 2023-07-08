@@ -1,4 +1,9 @@
 # Up_windows
+Отключить Дефендер
+
+sc stop windefend
+
+sc query windefend
 
 Создание теневой копии диска
 
