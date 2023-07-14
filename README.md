@@ -97,6 +97,8 @@ Cбор информации в домене
 
 net use * \\ta-d.local\NETLOGON - подключить сетевой диск
 
+net accounts - парольная политика пользователя
+
 net user /domain пользователи домена
 Get-ADUser -identity administrator -properties *
 Get-ADUser -identity administrator -properties memberof
