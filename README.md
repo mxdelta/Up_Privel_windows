@@ -125,7 +125,7 @@ https://github.com/HarmJ0y/PowerUp
 
 !!! http://www.fuzzysecurity.com/tutorials/files/wmic_info.rar
 
-Проверка мисконфигов?
+Проверка мисконфигов виндовс
 
 !!! https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
 
