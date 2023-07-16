@@ -121,6 +121,9 @@ Systeminfo перенаправил в текстовик, после этого
 
 Но перед этим нужно скачать exploit_suggester, например такой: GitHub - AonCyberLabs/Windows-Exploit-Suggester: This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target. It also notifies the user if there are public exploits and Metasploit modules available for the missing bulletins.
 
+
+IEX (New-Object Net.WebClient).DownloadString("file://$PWD/pw.ps1")
+
 https://github.com/HarmJ0y/PowerUp
 
 !!! http://www.fuzzysecurity.com/tutorials/files/wmic_info.rar
