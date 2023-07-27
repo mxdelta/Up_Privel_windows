@@ -1,4 +1,10 @@
 # Up_windows
+
+
+Подсказки для виндовс
+
+https://sushant747.gitbooks.io/total-oscp-guide/content/basics_of_windows.html
+
 Отключить Дефендер
 
 sc stop windefend
