@@ -59,6 +59,11 @@ john --format=mscash2 --wordlist=/usr/share/wordlists/rockyou.txt filehash
 
 
 Psexec -i \\192.168.50.200 -u administrator -s cmd.exe Привелигерованный режим... (если уже админ то ситем)
+
+Имперсонификация
+PsExec64.exe -i -s cmd
+PsExec64.exe -i -u "nt authority\local service" cmd
+
 для psexec
 reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
 
