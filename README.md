@@ -126,6 +126,8 @@ Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры 
 net group "domain computer"
 Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы.
 
+wmic qfe  - перечислить патчи
+
 
 # Добавление пользователя в домен и в группу
 
