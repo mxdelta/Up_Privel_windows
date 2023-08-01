@@ -140,7 +140,7 @@ icalcs "C:\xampp\mysql\bin\mysqld.exe"
 # Enumerate specific service
 Get-CimInstance -ClassName Win32_Service -Filter "Name='mysql'" | Select-Object StartMode
 
-   Скрипты векторов повышения привелегий
+# Скрипты векторов повышения привелегий
 
 cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
 
