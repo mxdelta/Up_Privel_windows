@@ -124,6 +124,12 @@ Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры 
 net group "domain computer"
 Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы.
 
+
+# Добавление пользователя в домен и в группу
+
+net user mighty Password123! /add /domain
+net group "domain admins" mighty /add /domain
+
 # Enumeration running services
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
 
