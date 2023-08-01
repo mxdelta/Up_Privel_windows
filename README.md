@@ -122,7 +122,17 @@ net group "domain admins" кто входит в группы
 
 Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры в домене
 net group "domain computer"
+Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы.
 
+# Enumeration running services
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
+
+# Service binary enumeration
+icacls "C:\xampp\apache\bin\httpd.exe"
+icalcs "C:\xampp\mysql\bin\mysqld.exe"
+
+# Enumerate specific service
+Get-CimInstance -ClassName Win32_Service -Filter "Name='mysql'" | Select-Object StartMode
 
    Скрипты векторов повышения привелегий
 
@@ -130,8 +140,8 @@ cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
 
 findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
 
-Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы, включая конфигурацию операционной системы, информацию о безопасности, идентификатор продукта и свойства оборудования (например, ОЗУ, место на диске и сетевые карты).
-Systeminfo перенаправил в текстовик, после этого я загрузил на Kali этот файл, и сейчас будем смотреть в него
+
+
 
 Но перед этим нужно скачать exploit_suggester, например такой: GitHub - AonCyberLabs/Windows-Exploit-Suggester: This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target. It also notifies the user if there are public exploits and Metasploit modules available for the missing bulletins.
 
