@@ -3,7 +3,7 @@
 
 Подсказки для виндовс
 
-https://github.com/davidbombal/Ethical-Hacking/blob/main/Windows%20Pentesting%20with%20OffSec
+# https://github.com/davidbombal/Ethical-Hacking/blob/main/Windows%20Pentesting%20with%20OffSec
 
 https://sushant747.gitbooks.io/total-oscp-guide/content/basics_of_windows.html
 
