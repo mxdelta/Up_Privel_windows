@@ -1,13 +1,13 @@
 # Up_windows
 
 
-Подсказки для виндовс
+# Подсказки для виндовс
 
 # https://github.com/davidbombal/Ethical-Hacking/blob/main/Windows%20Pentesting%20with%20OffSec
 
 https://sushant747.gitbooks.io/total-oscp-guide/content/basics_of_windows.html
 
-Отключить Дефендер
+# Отключить Дефендер
 
 sc stop windefend
 
@@ -15,7 +15,14 @@ sc query windefend
 
 sc queryex type= service - все процессы
 
-Создание теневой копии диска
+# Просмотр брандмауэра
+
+netsh advfirewall firewall
+
+netsh firewall show state
+
+
+# Создание теневой копии диска
 
 vssadmin create shadow /for=c:
 
