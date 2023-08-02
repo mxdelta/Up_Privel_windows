@@ -13,6 +13,8 @@ sc stop windefend
 
 sc query windefend
 
+sc queryex type= service - все процессы
+
 Создание теневой копии диска
 
 vssadmin create shadow /for=c:
