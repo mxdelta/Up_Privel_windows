@@ -187,4 +187,4 @@ https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
   для которого import-module ./powerup.ps1 и затем Invoke-AllChecks или 
   Invoke-AllChecks | out-file -Encoding ASCII checks.txt
 
-  
+  https://github.com/SecWiki/windows-kernel-exploits все эксплойты!!!
