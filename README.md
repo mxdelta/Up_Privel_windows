@@ -22,6 +22,7 @@ netsh advfirewall firewall
 netsh firewall show state
 
 netsh firewall show config
+netsh firewall show config
 
 # Создание теневой копии диска
 
