@@ -201,4 +201,4 @@ https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
 
 ./windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp1-systeminfo.txt 
 
-./wes.py systeminfo.txt -e --color --impact "Elevation of Privilege" --severity critical
+./wes.py systeminfo.txt -e --color --severity critical
