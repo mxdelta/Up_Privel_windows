@@ -196,3 +196,9 @@ https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
   Invoke-AllChecks | out-file -Encoding ASCII checks.txt
 
   https://github.com/SecWiki/windows-kernel-exploits все эксплойты!!!
+
+  ## Сканер Эксплойтов виндовс
+
+./windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp1-systeminfo.txt 
+
+./wes.py systeminfo.txt -e --color --impact "Elevation of Privilege" --severity critical
