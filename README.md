@@ -7,6 +7,12 @@
 
 https://sushant747.gitbooks.io/total-oscp-guide/content/basics_of_windows.html
 
+# Список SPN внутри домена
+
+setspn -T TA-D.Local -Q */*
+
+klist
+
 # Отключить Дефендер
 
 sc stop windefend
