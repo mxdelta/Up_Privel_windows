@@ -160,6 +160,12 @@ net group "domain admins" mighty /add /domain
 # Enumeration running services
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
 
+C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc - проверка разрешений доступа к слжбам виндовс 
+
+sc qc daclsvc - используется для получения информации о конфигурации и параметрах обслуживания приложения DAclSvc 
+
+sc query daclsvc - информация о состянии службы (старт, стоп)
+
 # Service binary enumeration
 icacls "C:\xampp\apache\bin\httpd.exe"
 icalcs "C:\xampp\mysql\bin\mysqld.exe"
