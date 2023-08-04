@@ -183,6 +183,8 @@ IEX (New-Object Net.WebClient).DownloadString("file://$PWD/pw.ps1")
 
 Import-Module - соответственно импорт модуля
 
+Set-ExecutionPolicy Unrestricted  - разрешить выполнение скриптов
+
 https://github.com/HarmJ0y/PowerUp
 
 !!! http://www.fuzzysecurity.com/tutorials/files/wmic_info.rar
