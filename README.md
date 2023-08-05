@@ -93,6 +93,11 @@ reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system /v LocalA
 
 
 
+
+# Реестр виндовс 
+
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run - запрос значения ветки
+
 Автозагрузка.....
 Если у вас права обычного пользователя, следует использовать ветку реестра HKCU
 
@@ -117,7 +122,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\
 reg add “HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run” /v payload /t REG_SZ /d “C:\tmp\payload.exe”
 
 
-Пример создания запланированной задачи:
+# Пример создания запланированной задачи:
 
 schtasks /create /sc minute /mo 5 /tn "Opera scheduled Autoupdate 1594994248" /tr C:\tmp\Opera_autoupdate1594994248.exe
 
