@@ -98,6 +98,9 @@ reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\system /v LocalA
 
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run - запрос значения ветки
 
+reg query HKLM /f password /t REG_SZ /s - поиск слова password в реестре
+
+
 Автозагрузка.....
 Если у вас права обычного пользователя, следует использовать ветку реестра HKCU
 
