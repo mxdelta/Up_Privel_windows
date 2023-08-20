@@ -242,3 +242,10 @@ https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
 
 # Hack Triks
 https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens
+
+# BloodHound/SharpHound
+https://bloodhound.readthedocs.io/en/latest/data-collection/sharphound.html (Установка шарпхаунда)
+
+https://github.com/SkillfactoryCoding/HACKER-OS-BloodHound (оф репозиторий)
+
+bloodhound-python --dns-tcp -ns 10.10.11.222 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!' -d 'authority.htb' -c all (Дампим снаружи домена - нужны креды)
