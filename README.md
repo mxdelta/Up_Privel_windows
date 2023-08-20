@@ -254,3 +254,7 @@ bloodhound-python --dns-tcp -ns 10.10.11.222 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r
 cd /usr/bin
 sudo ./neo4j console
 ./BloodHound --no-sandbox
+
+# Проверка сертификатов
+certipy-ad find -u svc_ldap@authority.htb -p lDaP_1n_th3_cle4r! -dc-ip 10.10.11.222
+
