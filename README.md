@@ -266,7 +266,10 @@ https://github.com/HarmJ0y/PowerUp
 
 --Power view
 
+https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993
+
 Get-NetUser | select cn    (список пользователей)
 
 Get-NetGroup -GroupName *admin*   (список групп содержащих *админ*)
+
 
