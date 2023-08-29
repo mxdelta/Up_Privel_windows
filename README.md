@@ -113,7 +113,9 @@ reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run - запрос зн
 
 reg query HKLM /f password /t REG_SZ /s - поиск слова password в реестре
 
+reg qury HKLM\SYSTEM\CurrentControlSet\services\ - запрос списка сервисов
 
+ 
 Автозагрузка.....
 
 "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
