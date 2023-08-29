@@ -205,7 +205,7 @@ accesschk64.exe -wvu -accepteula "C:\Program Files\Autorun Program"
 
 C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
 
-# Service binary enumeration
+C:\Users\User\Desktop\Tools\Accesschk\accesschk64.exe -wuvc daclsvc - доступ к сервису
 
 icacls "C:\xampp\apache\bin\httpd.exe"
 icalcs "C:\xampp\mysql\bin\mysqld.exe"
