@@ -55,7 +55,8 @@ netsh advfirewall firewall show rule name=all
 netsh firewall show state
 
 netsh firewall show config
-netsh firewall show config
+
+netsh advfirewall set allprofiles state off
 
 # Создание теневой копии диска
 
