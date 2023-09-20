@@ -48,6 +48,10 @@ sc queryex type= service - все процессы
 
 netsh advfirewall firewall
 
+netsh advfirewall show currentprofile
+
+netsh advfirewall firewall show rule name=all
+
 netsh firewall show state
 
 netsh firewall show config
