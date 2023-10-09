@@ -268,9 +268,12 @@ https://github.com/SkillfactoryCoding/HACKER-OS-BloodHound (оф репозит�
 
 bloodhound-python --dns-tcp -ns 10.10.11.222 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!' -d 'authority.htb' -c all (Дампим снаружи домена - нужны креды)
 
+bloodhound-python -d htb.local -ns 10.10.10.161 -u 'svc-alfresco' -p 's3rvice'  -c all
+
 Запуск
 cd /usr/bin
 sudo ./neo4j console
+/home/max/BloodHound-linux-x64
 ./BloodHound --no-sandbox
 
 # Проверка сертификатов
