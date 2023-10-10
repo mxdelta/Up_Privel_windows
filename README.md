@@ -1,5 +1,9 @@
 # Up_windows
 
+# Расшифровка учетных записей
+https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators
+
+
 # enumeration
 
 systeminfo
