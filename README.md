@@ -274,13 +274,9 @@ bloodhound-python -d htb.local -ns 10.10.10.161 -u 'svc-alfresco' -p 's3rvice'  
 
 Запуск
 
-cd /usr/bin
+cd /usr/bin && sudo ./neo4j console
 
-sudo ./neo4j console
-
-/home/max/BloodHound-linux-x64
-
-./BloodHound --no-sandbox
+cd /home/max/BloodHound-linux-x64 && ./BloodHound --no-sandbox
 
 # Проверка сертификатов
 certipy-ad find -u svc_ldap@authority.htb -p lDaP_1n_th3_cle4r! -dc-ip 10.10.11.222
