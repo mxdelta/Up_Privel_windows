@@ -221,9 +221,9 @@ Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName 
 
 C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc - проверка разрешений доступа к слжбам виндовс 
 
-sc qc daclsvc - используется для получения информации о конфигурации и параметрах обслуживания приложения DAclSvc 
+sc.exe qc daclsvc - используется для получения информации о конфигурации и параметрах обслуживания приложения DAclSvc 
 
-sc query daclsvc - информация о состянии службы (старт, стоп)
+sc.exe query daclsvc - информация о состянии службы (старт, стоп)
 
 services
 
