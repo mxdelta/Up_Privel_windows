@@ -16,7 +16,9 @@ netstat -ano | findstr ":<port>"
 
 tasklist /svc
 
+# Истоия журнала PowerShell
 
+type $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
 # Токен имперсонейшн
 
