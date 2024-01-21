@@ -278,7 +278,9 @@ C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Servi
 C:\Users\User\Desktop\Tools\Accesschk\accesschk64.exe -wuvc daclsvc - доступ к сервису
 
 icacls "C:\xampp\apache\bin\httpd.exe"
-icalcs "C:\xampp\mysql\bin\mysqld.exe"
+
+Get-acl file | fl *
+
 
 
 
