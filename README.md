@@ -4,6 +4,14 @@
 
 https://github.com/antonioCoco/RunasCs
 
+# SeLoadDriverPrivelege
+
+POC -->
+https://github.com/TarlogicSecurity/EoPLoadDriver/
+
+Driver -->
+https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
+
 # ZERO_LOGON
 
 python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
