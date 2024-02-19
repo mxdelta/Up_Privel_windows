@@ -6,14 +6,17 @@ https://github.com/antonioCoco/RunasCs
 
 # SeLoadDriverPrivelege
 
-POC -->
+POC -->compile
 https://github.com/TarlogicSecurity/EoPLoadDriver/
 
-Driver -->
+Driver -->compile
 https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
 
+driver exploit --> compile
 https://github.com/tandasat/ExploitCapcom
 
+reverse shell c#
+https://www.puckiestyle.nl/c-simple-reverse-shell/
 
 # ZERO_LOGON
 
