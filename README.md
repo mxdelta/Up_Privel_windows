@@ -1,5 +1,8 @@
 # Up_windows
 
+msconfig
+azman.msc
+
 # Run AS without terminal
 
 https://github.com/antonioCoco/RunasCs
