@@ -1,7 +1,17 @@
 # Up_windows
 
+# повышение привелегий серез UAC
+
 msconfig
 azman.msc
+
+# Поиск описания пользователей
+
+Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
+
+# Поиск строк в реестре
+
+reg query HKLM /f password /t REG_SZ /s | findstr /s flag
 
 # Run AS without terminal
 
