@@ -25,25 +25,39 @@ azman.msc
 
 net use * \\ta-d.local\NETLOGON - подключить сетевой диск
 
-# Поиск описания пользователей груп и политик (Cбор информации в домене)
+# Поиск описания пользователей груп и политик и добавление (Cбор информации в домене)
+
+    net user /domain пользователи домена
+    net user administrator /domain в какие группы входит пользователь
+    net localgroup
+    net group /domain
+    net group "domain admins" кто входит в группы
+    net accounts - парольная политика пользователя
+
+# Добавление пользователя в домен и в группу
+
+    net user mighty Password123! /add /domain
+
+    net group "domain admins" max /add /domain
+
+    net localgroup 'Remote Management Users' max /add
+
+
+
+
 
 Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
 
- 
 
 
 
-net accounts - парольная политика пользователя
 
-net user /domain пользователи домена
+
 Get-ADUser -identity administrator -properties *
 Get-ADUser -identity administrator -properties memberof
 
-net user administrator /domain в какие группы входит пользователь
-net group "domain admins" кто входит в группы
-
 Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры в домене
-net group "domain computer"
+
 Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы.
 
 wmic qfe  - перечислить патчи
@@ -51,13 +65,7 @@ wmic qfe  - перечислить патчи
 wmic logicaldisk - перечислить диски
 
 
-# Добавление пользователя в домен и в группу
 
-net user mighty Password123! /add /domain
-
-net group "domain admins" max /add /domain
-
-net localgroup 'Remote Management Users' max /add
 
 # Поиск строк в реестре
 
