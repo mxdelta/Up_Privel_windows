@@ -33,6 +33,7 @@ net use * \\ta-d.local\NETLOGON - подключить сетевой диск
     net group /domain
     net group "domain admins" кто входит в группы
     net accounts - парольная политика пользователя
+    net accounts /domain
 
 # Добавление пользователя в домен и в группу
 
