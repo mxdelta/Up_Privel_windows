@@ -31,6 +31,8 @@ reg query HKLM /f password /t REG_SZ /s | findstr /s flag
 
 # Run AS without terminal
 
+runas /netonly /user:domain\user command"
+
 https://github.com/antonioCoco/RunasCs
 
 # SeLoadDriverPrivelege
