@@ -41,9 +41,19 @@ Get-ADUser -Identity gordon.stevens -Server za.tryhackme.com -Properties *   - �
         -Properties - Какие свойства, связанные с учетной записью, будут показаны, * будут показаны все свойства
         -Server - Поскольку мы не подключены к домену, мы должны использовать этот параметр, чтобы указать его на наш контроллер домена
 
-Get-ADUser -identity administrator -properties memberof
+Get-ADUser -identity administrator -properties memberof  --- показывает в какие группы входит
+Get-ADGroupMember -Identity Administrators -Server za.tryhackme.com  --- показывает в какие группы входит
+
+
+Get-ADGroup -Identity Administrators -Server za.tryhackme.com --- показывает группы
 
 Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress -- компутеры в домене
+
+Более общий поиск любых объектов AD можно выполнить с помощью Get-ADObject командлета
+
+Get-ADObject -Filter 'badPwdCount -gt 0' -Server za.tryhackme.com
+
+Get-ADDomain -Server za.tryhackme.com     --- иноф о домене
 
 # Добавление пользователя в домен и в группу
 
