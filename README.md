@@ -35,6 +35,16 @@ net use * \\ta-d.local\NETLOGON - подключить сетевой диск
     net accounts - парольная политика пользователя
     net accounts /domain
 
+Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
+Get-ADUser -Identity gordon.stevens -Server za.tryhackme.com -Properties *   - информация о юзере gordon.stevens
+        -Identity - имя учетной записи, которое мы перечисляем
+        -Properties - Какие свойства, связанные с учетной записью, будут показаны, * будут показаны все свойства
+        -Server - Поскольку мы не подключены к домену, мы должны использовать этот параметр, чтобы указать его на наш контроллер домена
+
+Get-ADUser -identity administrator -properties memberof
+
+Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress -- компутеры в домене
+
 # Добавление пользователя в домен и в группу
 
     net user mighty Password123! /add /domain
@@ -42,23 +52,6 @@ net use * \\ta-d.local\NETLOGON - подключить сетевой диск
     net group "domain admins" max /add /domain
 
     net localgroup 'Remote Management Users' max /add
-
-
-
-
-
-Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
-
-
-
-
-
-
-Get-ADUser -identity administrator -properties *
-Get-ADUser -identity administrator -properties memberof
-
-Get-ADcomputer -filter * -properties * | ft nmae, ipv4adress компутеры в домене
-
 Systeminfo - отображает подробную информацию о конфигурации компьютера и его операционной системы.
 
 wmic qfe  - перечислить патчи
