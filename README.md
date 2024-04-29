@@ -55,6 +55,8 @@ Get-ADObject -Filter 'badPwdCount -gt 0' -Server za.tryhackme.com
 
 Get-ADDomain -Server za.tryhackme.com     --- иноф о домене
 
+Set-ADAccountPassword -Identity gordon.stevens -Server za.tryhackme.com -OldPassword (ConvertTo-SecureString -AsPlaintext "old" -force) -NewPassword (ConvertTo-SecureString -AsPlainText "new" -Force)  ---смена пароля
+
 # Добавление пользователя в домен и в группу
 
     net user mighty Password123! /add /domain
