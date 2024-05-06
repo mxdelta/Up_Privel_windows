@@ -57,6 +57,22 @@ Get-ADDomain -Server za.tryhackme.com     --- иноф о домене
 
 Set-ADAccountPassword -Identity gordon.stevens -Server za.tryhackme.com -OldPassword (ConvertTo-SecureString -AsPlaintext "old" -force) -NewPassword (ConvertTo-SecureString -AsPlainText "new" -Force)  ---смена пароля
 
+# Смена пароля и добавление в группу
+
+Add-ADGroupMember "IT Support" -Members "Your.AD.Account.Username"
+
+Get-ADGroupMember -Identity "IT Support"
+
+Get-ADGroupMember -Identity "Tier 2 Admins"
+
+$Password = ConvertTo-SecureString "New.Password.For.User" -AsPlainText -Force 
+
+Set-ADAccountPassword -Identity "AD.Account.Username.Of.Target" -Reset -NewPassword $Password 
+
+gpupdate /force
+
+
+
 # Добавление пользователя в домен и в группу
 
     net user mighty Password123! /add /domain
