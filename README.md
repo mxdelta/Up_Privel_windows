@@ -35,13 +35,17 @@ net use * \\ta-d.local\NETLOGON - подключить сетевой диск
     net accounts - парольная политика пользователя
     net accounts /domain
 
+https://github.com/PowerShellMafia/PowerSploit      ---- Powersploit
+
 Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
+
 Get-ADUser -Identity gordon.stevens -Server za.tryhackme.com -Properties *   - информация о юзере gordon.stevens
         -Identity - имя учетной записи, которое мы перечисляем
         -Properties - Какие свойства, связанные с учетной записью, будут показаны, * будут показаны все свойства
         -Server - Поскольку мы не подключены к домену, мы должны использовать этот параметр, чтобы указать его на наш контроллер домена
 
 Get-ADUser -identity administrator -properties memberof  --- показывает в какие группы входит
+
 Get-ADGroupMember -Identity Administrators -Server za.tryhackme.com  --- показывает в какие группы входит
 
 
