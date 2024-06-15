@@ -358,6 +358,20 @@ sc.exe config browser binpath="C:\Windows\system32\cmd.exe /c net user administr
 sc.exe stop browser
 
 sc.exe start browser
+        
+net stop browser
+
+
+        ----через повер шелл
+        
+cd HKLM:\system\currentcontrolset\services> set-location 'hklm:\system\currentcontrolset\services'    ----- перейтив в ветку где все службы
+
+get-childiem .    ---- получить список служб
+
+PS HKLM:\system\currentcontrolset\services> get-childitem . | where-object {$_.N
+ame -like '*MTsensor*'}    ----- определить название службы 
+
+Stop-Service 'MTSensor'
 
 
 
