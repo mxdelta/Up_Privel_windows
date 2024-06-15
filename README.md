@@ -368,6 +368,8 @@ cd HKLM:\system\currentcontrolset\services> set-location 'hklm:\system\currentco
 
 get-childiem .    ---- получить список служб
 
+Get-ChildItem . | select name    --- получить все имена служб
+
 PS HKLM:\system\currentcontrolset\services> get-childitem . | where-object {$_.N
 ame -like '*MTsensor*'}    ----- определить название службы 
 
