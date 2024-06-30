@@ -1,5 +1,12 @@
 # Up_windows
 
+# Проверить права
+    icacls nc64.exe
+
+# Добавить права
+    cacls nc64.exe /E /G ginawild:F
+
+
 # Простая DLL на С
 
 #include <stdlib.h>
