@@ -1,5 +1,9 @@
 # Up_windows
 
+# Узнать какие программы установлены на компутере
+
+get-wmiobject -class win32_product
+
 # Проверить права
     icacls nc64.exe
 
