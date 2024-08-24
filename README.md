@@ -158,11 +158,19 @@ gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH
 
 # enumeration
 
+---------------Информация о системе
+
 systeminfo
+
+---------------открытые порты
 
 netstat -ano | findstr ":<port>"
 
+--------------Запущенные процессы
+
 tasklist /svc
+
+ps -aux
 
 # Истоия журнала PowerShell
 
