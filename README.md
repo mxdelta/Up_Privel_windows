@@ -176,6 +176,10 @@ ps
 
 Get-Process
 
+--------------Залогиненные пользователи
+
+    query user
+
 # Истоия журнала PowerShell
 
 type $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
