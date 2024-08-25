@@ -170,7 +170,9 @@ netstat -ano | findstr ":<port>"
 
 tasklist /svc
 
-ps -aux
+ps
+
+Get-Process
 
 # Истоия журнала PowerShell
 
