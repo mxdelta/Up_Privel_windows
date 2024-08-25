@@ -45,6 +45,29 @@ net use * \\ta-d.local\NETLOGON - подключить сетевой диск
     net accounts - парольная политика пользователя
     net accounts /domain
 
+# enumeration
+
+---------------Информация о системе
+
+systeminfo
+
+---------------открытые порты
+
+netstat -ano | findstr ":"
+
+--------------Запущенные процессы
+
+tasklist /svc
+
+ps
+
+Get-Process
+
+--------------Залогиненные пользователи
+
+query user
+
+----------------------------
 https://github.com/PowerShellMafia/PowerSploit      ---- Powersploit
 
 Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
@@ -158,27 +181,6 @@ https://docs.microsoft.com/en-us/windows/security/identity-protection/access-con
 gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ     где edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ - зашифрованый пароль
 
 
-# enumeration
-
----------------Информация о системе
-
-systeminfo
-
----------------открытые порты
-
-netstat -ano | findstr ":<port>"
-
---------------Запущенные процессы
-
-tasklist /svc
-
-ps
-
-Get-Process
-
---------------Залогиненные пользователи
-
-    query user
 
 # Истоия журнала PowerShell
 
