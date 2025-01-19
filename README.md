@@ -3,7 +3,7 @@
 # Decompiler ilspy
 
     https://github.com/icsharpcode/ILSpy   ---->>>> https://github.com/icsharpcode/AvaloniaILSpy
-    
+    (blazorized hackthebox)
 
 # Узнать какие программы установлены на компутере
 
