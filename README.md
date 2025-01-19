@@ -1,5 +1,10 @@
 # Up_windows
 
+# Decompiler ilspy
+
+    https://github.com/icsharpcode/ILSpy   ---->>>> https://github.com/icsharpcode/AvaloniaILSpy
+    
+
 # Узнать какие программы установлены на компутере
 
 get-wmiobject -class win32_product
