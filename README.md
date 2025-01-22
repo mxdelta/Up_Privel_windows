@@ -63,6 +63,7 @@ net use * \\ta-d.local\NETLOGON - подключить сетевой диск
     net group "domain admins" кто входит в группы
     net accounts - парольная политика пользователя
     net accounts /domain
+    get-aduser -filter * | select samaccountname    !!!!!!!!!!!!!!!!!!!!!
 
 # enumeration
 
