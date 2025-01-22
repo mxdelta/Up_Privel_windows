@@ -9,6 +9,10 @@
 
 get-wmiobject -class win32_product
 
+# Поиск паролей в каталогах
+
+    gci -path . -recurse -ea SilentlyContinue -Include *.ini,*.yml,*.ps1,*cfg | select-string pass
+
 # Проверить права
     icacls nc64.exe
 
