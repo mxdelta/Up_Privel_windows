@@ -186,6 +186,10 @@ impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
 ---Создание ярлыков
 
 https://github.com/Greenwolf/ntlm_theft
+# Сщздание вредноносных ссылок
+
+https://www.ired.team/offensive-security/initial-access/phishing-with-ms-office/phishing-ole-+-lnk
+
 
 # Расшифровка учетных записей
 https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators
