@@ -11,6 +11,8 @@ get-wmiobject -class win32_product
 
 # Поиск паролей в каталогах
 
+    gci -recurse -force -include *.txt,*.ini,*.xml,*.cfg | select-string password
+    
     gci -path . -recurse -ea SilentlyContinue -Include *.ini,*.yml,*.ps1,*cfg | select-string pass
     
     cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
@@ -24,6 +26,7 @@ reg query HKLM /f password /t REG_SZ /s | findstr /s flag
 
 
 # Проверить права
+   
     icacls nc64.exe
 
     cmd /c "dir /q"
