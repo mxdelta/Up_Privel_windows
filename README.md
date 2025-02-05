@@ -27,7 +27,8 @@ reg query HKLM /f password /t REG_SZ /s | findstr /s flag
     icacls nc64.exe
 
     cmd /c "dir /q"
-    
+    get-acl "inetpub" |select AccessToString | fl
+
 # Добавить права
     cacls nc64.exe /E /G ginawild:F
 
