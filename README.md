@@ -26,6 +26,8 @@ reg query HKLM /f password /t REG_SZ /s | findstr /s flag
 # Проверить права
     icacls nc64.exe
 
+    cmd /c "dir /q"
+    
 # Добавить права
     cacls nc64.exe /E /G ginawild:F
 
