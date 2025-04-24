@@ -182,11 +182,16 @@ https://docs.microsoft.com/en-us/windows/security/identity-protection/access-con
 
 gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ     где edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ - зашифрованый пароль
 
-# SeLoadDriverPrivelege
+# SeLoadDriverPrivelege (Print Operators)
+------все делаем в виндовс---------
 
-POC -->compile
+!!!!! Если в группе принт оператор  - нет SeLoadDriverPrivelege надо запуститть оболочку от имени пользователсяя группы print operator
+
+скачиваем POC --> compile
 https://github.com/TarlogicSecurity/EoPLoadDriver/
+называем LoadDriver.exe!!!
 
+скачиваем драйвер
 Driver 
 https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
 
