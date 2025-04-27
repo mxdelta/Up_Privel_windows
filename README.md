@@ -85,9 +85,9 @@ netstat -ano | findstr ":"
 
 --------------Запущенные процессы
 
-tasklist /svc
-
-ps
+    tasklist /svc | findstr "rundll32"  --> список процессов
+    taskkill /PID 7044 /F                ---> убить процесс
+    ps
 
 Get-Process
 
