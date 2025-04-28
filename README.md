@@ -9,6 +9,8 @@
 
 get-wmiobject -class win32_product
 
+wmic product get name
+
 # Поиск паролей в каталогах
 
     gci -recurse -force -include *.txt,*.ini,*.xml,*.cfg | select-string password
