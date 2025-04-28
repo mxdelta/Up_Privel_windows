@@ -56,7 +56,8 @@ reg query HKLM /f password /t REG_SZ /s | findstr /s flag
     rundll32 shell32.dll,Control_RunDLL C:\Users\sarah\AppData\Local\Microsoft\WindowsApps\srrstr.dll
 
 # повышение привелегий серез UAC
-
+    User Account Control
+    https://github.com/hfiref0x/UACME
 msconfig
 azman.msc
 
