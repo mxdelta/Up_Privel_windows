@@ -88,7 +88,7 @@ systeminfo
 
 ---------------открытые порты
 
-netstat -ano | findstr ":"
+netstat -ano | findstr "6563"
 
 --------------Запущенные процессы
 
@@ -96,7 +96,10 @@ netstat -ano | findstr ":"
     taskkill /PID 7044 /F                ---> убить процесс
     ps
 
-Get-Process
+    Get-Process
+---------Перечисление запущенных служб 
+
+    get-service | ? {$_.DisplayName -like 'Druva*'}
 
 --------------Залогиненные пользователи
 
