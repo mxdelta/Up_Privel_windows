@@ -1,5 +1,9 @@
 # Up_windows
 
+# Все уязвимости вмндовс
+
+    https://msrc.microsoft.com/update-guide/vulnerability
+
 # Decompiler ilspy
 
     https://github.com/icsharpcode/ILSpy   ---->>>> https://github.com/icsharpcode/AvaloniaILSpy
