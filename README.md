@@ -17,6 +17,14 @@ wmic product get name
 
 # Поиск паролей в каталогах
 
+       Поиск файлов с названием *cred*
+
+           find /mnt/Finance/ -name *cred*
+
+        поиск файлов содержащих строку *cred*
+
+            grep -rn /mnt/Finance/ -ie cred
+            
     gci -recurse -force -include *.txt,*.ini,*.xml,*.cfg | select-string password
     
     gci -path . -recurse -ea SilentlyContinue -Include *.ini,*.yml,*.ps1,*cfg | select-string pass
