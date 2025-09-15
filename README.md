@@ -24,7 +24,10 @@ wmic product get name
     cd C:\ & findstr /s /p /i /n /m "password" *.xml *.ini *.txt *.config *.vbs
 
     findstr /s /p /i /n /m "password" \\ta-d.local\SYSVOL\*.xml *.ini *.txt *.config *.vbs
-    
+# Учетные данные (DPAPI)
+
+        https://github.com/login-securite/DonPAPI
+        
 # Учетные данные (DPAPI) PowerShell
     ls -force C:\Users\steph.cooper\AppData\Roaming\Microsoft\Protect\S-1-5-21-1487982659-1829050783-2281216199-1107
     ls -force C:\Users\steph.cooper\AppData\Roaming\Microsoft\Credentials
